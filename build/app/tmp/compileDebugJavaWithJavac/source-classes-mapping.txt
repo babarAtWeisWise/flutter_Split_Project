@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/techscale/split/flutter_split_project/BuildConfig.java
+ com.techscale.split.flutter_split_project.BuildConfig

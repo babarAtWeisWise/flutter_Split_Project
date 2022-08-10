@@ -1,15 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_split_project/Extensions/CustomTextStyle.dart';
 import 'package:flutter_split_project/Listview_Items/item_trip.dart';
+import 'package:flutter_split_project/Views/Notifications/notification_view.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../Extensions/Colors.dart';
 import '../../../Hepler/assets.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-
-import '../../../Widgets/TopHintTextfieldLabelWidget.dart';
 import '../../../Widgets/custom_appbar.dart';
 
 class DashboardView extends StatefulWidget {
@@ -28,13 +28,22 @@ class _DashboardState extends State<DashboardView> {
               style:
                   Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
           centerTitle: true,
+          leading: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.menu_outlined,
+                color: Colors.black,
+              )),
           actions: [
             IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.notification_important_rounded,
-                  color: Colors.black,
-                )),
+              onPressed: () {
+                Get.toNamed(NotificationView.routeName);
+              },
+              icon: Icon(
+                Icons.notification_important_rounded,
+                color: Colors.black,
+              ),
+            ),
           ]),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -101,14 +110,15 @@ class _DashboardState extends State<DashboardView> {
           padding: const EdgeInsets.only(top: 100.0),
           child: Container(
             decoration: new BoxDecoration(
-                gradient: new LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                HexColor.fromHex('#FFFFFF'),
-                HexColor.fromHex('#EFF1F5')
-              ],
-            )),
+              gradient: new LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  HexColor.fromHex('#FFFFFF'),
+                  HexColor.fromHex('#EFF1F5')
+                ],
+              ),
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -186,99 +196,98 @@ class _DashboardState extends State<DashboardView> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                SizedBox(
-                                  width: 170,
+                                Expanded(
                                   child: Card(
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(15),
                                         side: BorderSide(
                                             color: Colors.black26, width: 0.8)),
                                     elevation: 1,
-                                    margin: const EdgeInsets.symmetric(
-                                        vertical: 10.0, horizontal: 10.0),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          8.0, 6.0, 8.0, 6.0),
                                       child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           SvgPicture.asset(
                                             Assets.point_private,
-                                            width: 10.r,
-                                            height: 10.r,
+                                            width: 9.r,
+                                            height: 9.r,
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0, right: 8.0),
-                                            child: Text('private'.tr,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .regular
-                                                    .copyWith(fontSize: 14.sp)),
+                                          Text(
+                                            'private'.tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .regular
+                                                .copyWith(fontSize: 13.sp),
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 8.0),
-                                            child: SizedBox(
-                                              width: 5.0,
-                                              height: 20.0,
-                                              child: VerticalDivider(
-                                                color: Colors.black45,
-                                              ),
+                                          SizedBox(
+                                            height: 14.0,
+                                            child: Container(
+                                              width: 0.8,
+                                              color: Colors.black26,
                                             ),
                                           ),
-                                          Text('25',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .medium
-                                                  .copyWith(fontSize: 14.sp)),
+                                          Text(
+                                            '50km'.tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .medium
+                                                .copyWith(
+                                                  fontSize: 13.sp,
+                                                ),
+                                          )
                                         ],
                                       ),
                                     ),
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 170,
+                                  width: 8.0,
+                                ),
+                                Expanded(
                                   child: Card(
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(15),
                                         side: BorderSide(
                                             color: Colors.black26, width: 0.8)),
                                     elevation: 1,
-                                    margin: const EdgeInsets.symmetric(
-                                        vertical: 10.0, horizontal: 10.0),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          8.0, 6.0, 8.0, 6.0),
                                       child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           SvgPicture.asset(
                                             Assets.point_business,
-                                            width: 10.r,
-                                            height: 10.r,
+                                            width: 9.r,
+                                            height: 9.r,
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0, right: 8.0),
-                                            child: Text('business'.tr,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .regular
-                                                    .copyWith(fontSize: 14.sp)),
+                                          Text(
+                                            'business'.tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .regular
+                                                .copyWith(fontSize: 13.sp),
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 8.0),
-                                            child: SizedBox(
-                                              width: 5.0,
-                                              height: 20.0,
-                                              child: VerticalDivider(
-                                                color: Colors.black45,
-                                              ),
+                                          SizedBox(
+                                            height: 14.0,
+                                            child: Container(
+                                              width: 0.8,
+                                              color: Colors.black26,
                                             ),
                                           ),
-                                          Text('25',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .medium
-                                                  .copyWith(fontSize: 14.sp)),
+                                          Text(
+                                            '10km'.tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .medium
+                                                .copyWith(
+                                                  fontSize: 13.sp,
+                                                ),
+                                          )
                                         ],
                                       ),
                                     ),

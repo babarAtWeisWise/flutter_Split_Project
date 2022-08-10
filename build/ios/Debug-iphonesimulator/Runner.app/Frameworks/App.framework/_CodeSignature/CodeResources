@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		7t75yifjj5pzXN2Psd+WuGRE19w=
+		IdHJmJVj4yckFzcxR0xjxghwXnY=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		oPqfZw3t4zYe32uC9mOTx3pNX0g=
+		0Ewb4b2pvPc7bgjk/hQyePHt7x8=
 		</data>
 		<key>flutter_assets/assets/icons/ic_business_point.svg</key>
 		<data>
@@ -31,6 +31,10 @@
 		<key>flutter_assets/assets/icons/ic_private_point.svg</key>
 		<data>
 		TFeHOwm0VYjsJXPwaVFn2bueg24=
+		</data>
+		<key>flutter_assets/assets/icons/ic_trip_status.svg</key>
+		<data>
+		oWu4dvcWVnx4xNxdjjdVA9a5d0M=
 		</data>
 		<key>flutter_assets/assets/icons/tab_expense.svg</key>
 		<data>
@@ -94,7 +98,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		yYOnYYQxQrdqFvB5p+IfmdDw0Bk=
+		cN3IczEXJgXMGMAxQ2mC8sIDBvU=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -111,11 +115,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7t75yifjj5pzXN2Psd+WuGRE19w=
+			IdHJmJVj4yckFzcxR0xjxghwXnY=
 			</data>
 			<key>hash2</key>
 			<data>
-			07324TtWCNCeF1RB1haQB1nm4L1KC5bG/YGl8hZLCXk=
+			y1QbzUOUZ3AOvKlZAPGlZnMymhfK7ZDxsQF0Ni3EXVU=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -133,11 +137,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oPqfZw3t4zYe32uC9mOTx3pNX0g=
+			0Ewb4b2pvPc7bgjk/hQyePHt7x8=
 			</data>
 			<key>hash2</key>
 			<data>
-			6ovV1oyv1xx4vsMssbXL1sxHlRhcLcD7//iPrhAedrM=
+			el2HGzeJlSxlCK6KusaOgdVx8uvo2V3sDMZDa/2U8OM=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/ic_business_point.svg</key>
@@ -171,6 +175,17 @@
 			<key>hash2</key>
 			<data>
 			4INEIIkxG/NQE+/I62bUBqIGFvAHqDVXuj+rjWCZZPk=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/ic_trip_status.svg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			oWu4dvcWVnx4xNxdjjdVA9a5d0M=
+			</data>
+			<key>hash2</key>
+			<data>
+			wMiRPY090uOKjv90ZqLFRbMfn9G0oBfHtBOmAGH5ZYQ=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/tab_expense.svg</key>
@@ -342,11 +357,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yYOnYYQxQrdqFvB5p+IfmdDw0Bk=
+			cN3IczEXJgXMGMAxQ2mC8sIDBvU=
 			</data>
 			<key>hash2</key>
 			<data>
-			TABaLPmzP6jIk68bsG4qqTOMMU1LFZAPkwieltJEYds=
+			+AVs2hL91KesDLLPtpxzDkD/J/tJSPHZ5aSig3fa7aM=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

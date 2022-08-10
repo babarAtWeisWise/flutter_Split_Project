@@ -266,6 +266,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "grouped_list",
+      "rootUri": "file:///Users/weiswise/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/grouped_list-5.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "hive",
       "rootUri": "file:///Users/weiswise/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/hive-2.2.3",
       "packageUri": "lib/",
@@ -292,6 +298,12 @@
     {
       "name": "http_parser",
       "rootUri": "file:///Users/weiswise/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///Users/weiswise/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -602,7 +614,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-08-10T05:53:13.809656Z",
+  "generated": "2022-08-10T11:58:21.935634Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }
