@@ -26,8 +26,6 @@ class _LoginState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(backgroundColor: Colors.white,elevation: 0),
       body:Padding(
         padding: const EdgeInsets.only(top: 30),
         child: Container(
@@ -122,6 +120,7 @@ class _LoginState extends State<LoginView> {
               Padding(
                 padding: const EdgeInsets.only(left:20.0,right: 20.0),
                 child: ButtonWidget(
+                    title: "login",
                     onPressed: () {
                       // showTopSnackBar(
                       //   context,

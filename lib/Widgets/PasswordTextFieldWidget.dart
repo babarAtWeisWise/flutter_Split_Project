@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
@@ -27,7 +28,7 @@ class _PasswordFieldState extends State<PasswordField> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            height: 40,
+            height: 30.h,
             child: Center(
               child: new TextFormField(
                 obscureText: _obscureText,

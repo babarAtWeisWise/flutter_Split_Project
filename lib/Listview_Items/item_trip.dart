@@ -2,11 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_split_project/Extensions/CustomTextStyle.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_split_project/Views/Details/TripDetailsView.dart';
+import 'package:flutter_split_project/Widgets/OutlineButtonWidget.dart';
 import 'package:get/get.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
+import '../Extensions/Colors.dart';
+import '../Hepler/Constants.dart';
 import '../Hepler/colors.dart';
+import '../Widgets/ButtonWidget.dart';
+import '../Widgets/TextFieldWidget.dart';
+import '../Widgets/TopHintTextfieldLabelWidget.dart';
+import '../Widgets/CustomDropdown.dart';
 
 class item_trip extends StatefulWidget {
   @override
@@ -15,11 +22,14 @@ class item_trip extends StatefulWidget {
 
 class _item_tripState extends State<item_trip> {
   bool status = false;
+  late BuildContext dialogContext;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(TripDetailsView.routeName);
+      },
       child: Card(
         elevation: 3,
         clipBehavior: Clip.antiAlias,
@@ -74,8 +84,7 @@ class _item_tripState extends State<item_trip> {
                             style: Theme.of(context)
                                 .textTheme
                                 .medium
-                                .copyWith(
-                                    fontSize: 14.sp, color: kHintColor),
+                                .copyWith(fontSize: 14.sp, color: kHintColor),
                           ),
                           SizedBox(
                             width: 10.w,
@@ -99,7 +108,7 @@ class _item_tripState extends State<item_trip> {
                                     .textTheme
                                     .regular
                                     .copyWith(
-                                    fontSize: 14.sp, color: Colors.black),
+                                        fontSize: 14.sp, color: Colors.black),
                               ),
                               SizedBox(
                                 width: 5.w,
@@ -120,7 +129,7 @@ class _item_tripState extends State<item_trip> {
                                   onToggle: (val) {
                                     status = val;
                                     setState(() {
-
+                                      showCustomDialog(context);
                                     });
                                   },
                                 ),
@@ -134,7 +143,7 @@ class _item_tripState extends State<item_trip> {
                                     .textTheme
                                     .regular
                                     .copyWith(
-                                    fontSize: 14.sp, color: Colors.black),
+                                        fontSize: 14.sp, color: Colors.black),
                               ),
                             ],
                           )
@@ -150,8 +159,7 @@ class _item_tripState extends State<item_trip> {
                             style: Theme.of(context)
                                 .textTheme
                                 .medium
-                                .copyWith(
-                                    fontSize: 14.sp, color: kHintColor),
+                                .copyWith(fontSize: 14.sp, color: kHintColor),
                           ),
                           SizedBox(
                             width: 10.w,
@@ -161,8 +169,7 @@ class _item_tripState extends State<item_trip> {
                             style: Theme.of(context)
                                 .textTheme
                                 .regular
-                                .copyWith(
-                                    fontSize: 14.sp, color: Colors.black),
+                                .copyWith(fontSize: 14.sp, color: Colors.black),
                           )
                         ],
                       ),
@@ -176,4 +183,132 @@ class _item_tripState extends State<item_trip> {
       ),
     );
   }
+
+  void showCustomDialog(BuildContext context) {
+    dialogContext = context;
+    showGeneralDialog(
+      context: context,
+      barrierLabel: "Barrier",
+      barrierDismissible: true,
+      barrierColor: Colors.black.withOpacity(0.5),
+      transitionDuration: Duration(milliseconds: 700),
+      pageBuilder: (_, __, ___) {
+        return Center(
+          child: Container(
+            height: 320.h,
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15, left: 10.0),
+                        child: Text(
+                          'Select Reason',
+                          style: Theme.of(context)
+                              .textTheme
+                              .semibold
+                              .copyWith(fontSize: 20.sp),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                    child: TopHintTextfieldLabelWidget(
+                        hint: 'PURPOSE OF TRIP', color: kPrimaryVarientColor),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                    child: _dropdownMenus(30),
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                    child: TopHintTextfieldLabelWidget(
+                        hint: 'NOTE', color: kPrimaryVarientColor),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                    child: TextFieldWidget(
+                      hint: 'Type here...',
+                      maxLines: 15,
+                      keyboardType: TextInputType.multiline,
+                      height: 70.h,
+                      padding: 5,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                         Expanded(child: OutlineButtonWidget(onPressed: () {
+                           Navigator.pop(context, true);
+                         },height: 38,title: "Cancel")),
+                         SizedBox(width: 20.w),
+                         Expanded(child: ButtonWidget(onPressed: () {
+                           Navigator.pop(context, true);
+                         },height: 38,title: "Confirm"))
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            margin: EdgeInsets.symmetric(horizontal: 15),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(15)),
+          ),
+        );
+      },
+      transitionBuilder: (_, anim, __, child) {
+        Tween<Offset> tween;
+        if (anim.status == AnimationStatus.reverse) {
+          tween = Tween(begin: Offset(-1, 0), end: Offset.zero);
+        } else {
+          tween = Tween(begin: Offset(1, 0), end: Offset.zero);
+        }
+
+        return SlideTransition(
+          position: tween.animate(anim),
+          child: FadeTransition(
+            opacity: anim,
+            child: child,
+          ),
+        );
+      },
+    );
+  }
+}
+
+Widget _dropdownMenus(double height) {
+  return Column(
+    children: [
+      CustomDropDown(
+        height: height,
+        itemList: Constants.sample_list,
+        onSelectedValue: (val) => val,
+      ),
+    ],
+  );
 }

@@ -1,26 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Extensions/Colors.dart';
 
 class ButtonWidget extends StatelessWidget {
 
   final onPressed;
+  double height;
+  String title;
 
   ButtonWidget({
     this.onPressed,
+    this.height = 40,
+    required this.title
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 50,
+      height: height.h,
       child: ElevatedButton(
           onPressed: onPressed,
           child: Text(
-              "Login".toUpperCase(),
-              style: TextStyle(fontSize: 14)
+              title.toUpperCase(),
+              style: TextStyle(fontSize: 14.sp)
           ),
           style: ButtonStyle(
               foregroundColor: MaterialStateProperty.all<Color>(Colors.white),

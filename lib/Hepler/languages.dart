@@ -21,6 +21,7 @@ class Languages extends Translations {
           'your_split': 'Your Split',
           'total': 'Total',
           'monthly_history': 'Monthly History',
+          'trip_details': 'Trip Details',
 
         },
 
@@ -39,7 +40,8 @@ class Languages extends Translations {
           'to': 'To:',
           'your_split': 'Your Split',
           'total': 'Total',
-          'monthly_history': 'Monthly History'
+          'monthly_history': 'Monthly History',
+          'trip_details': 'Trip Details',
 
 
         },
