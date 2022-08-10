@@ -6,6 +6,7 @@ import 'package:flutter_split_project/Views/MainTabbar/MainTabView.dart';
 import 'package:get/get.dart';
 
 import '../Controllers/dashboard_controller.dart';
+import '../Views/Details/ExpenseDetailsView.dart';
 
 
 class GetPageList {
@@ -19,6 +20,11 @@ class GetPageList {
     GetPage(
       name: TripDetailsView.routeName,
       page: () => TripDetailsView(),
+      binding: BindingsBuilder(() => Get.lazyPut(() => LoginController())),
+    ),
+    GetPage(
+      name: ExpenseDetailsView.routeName,
+      page: () => ExpenseDetailsView(),
       binding: BindingsBuilder(() => Get.lazyPut(() => LoginController())),
     ),
     GetPage(

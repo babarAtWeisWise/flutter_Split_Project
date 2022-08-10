@@ -37,6 +37,7 @@ dev_dependencies:
   flutter_staggered_animations: ^1.0.0
   skeletons: ^0.0.3
   flutter_switch: ^0.3.2
+  google_maps_widget: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

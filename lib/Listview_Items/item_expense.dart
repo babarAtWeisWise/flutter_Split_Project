@@ -8,6 +8,7 @@ import 'package:flutter_switch/flutter_switch.dart';
 
 import '../Extensions/Colors.dart';
 import '../Hepler/colors.dart';
+import '../Views/Details/ExpenseDetailsView.dart';
 
 class item_expense extends StatelessWidget {
   bool status = false;
@@ -15,7 +16,9 @@ class item_expense extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(ExpenseDetailsView.routeName);
+      },
       child: Card(
         elevation: 3,
         clipBehavior: Clip.antiAlias,

@@ -28,24 +28,73 @@ class _DashboardState extends State<DashboardView> {
               style:
                   Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
           centerTitle: true,
-          leading: IconButton(
-              onPressed: () {
-
-              },
-              icon: Icon(
-                Icons.menu_outlined,
-                color: Colors.black,
-              )),
           actions: [
             IconButton(
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 icon: Icon(
                   Icons.notification_important_rounded,
                   color: Colors.black,
                 )),
           ]),
+      drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            Container(
+              decoration: new BoxDecoration(
+                  gradient: new LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                    HexColor.fromHex('#00B5EF'),
+                    HexColor.fromHex('#01A2D4')
+                  ])),
+              child: DrawerHeader(
+                child: Container(
+                    color: Colors.red,
+                    child: Column(
+                  children: [
+                    Text('Kasper Weis',
+                        style: Theme.of(context)
+                            .textTheme
+                            .medium
+                            .copyWith(fontSize: 18.sp, color: Colors.white)),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        primary: Colors.white,
+                        textStyle: Theme.of(context)
+                            .textTheme
+                            .regular
+                            .copyWith(fontSize: 13.sp),
+                      ),
+                      onPressed: () {},
+                      child: const Text('View Profile'),
+                    )
+                  ],
+                )),
+              ),
+            ),
+            ListTile(
+              title: const Text('Item 1'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: const Text('Item 2'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+          ],
+        ),
+      ),
       extendBodyBehindAppBar: true,
       body: Center(
         child: Padding(

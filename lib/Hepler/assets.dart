@@ -11,10 +11,6 @@ class Assets {
   static String ic_date = 'assets/icons/ic_date.svg';
 
   //pngs
-  static String intro1 = 'assets/images/intro1.png';
-  static String intro2 = 'assets/images/intro2.png';
-  static String intro3 = 'assets/images/intro3.png';
-  static String intro4 = 'assets/images/intro4.png';
-  static String intro5 = 'assets/images/intro5.png';
-  static String paymentCardBG = 'assets/images/payment_card_bg.png';
+  static String small_logo = 'assets/small_logo.png';
+
 }
