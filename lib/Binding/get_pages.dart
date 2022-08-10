@@ -3,6 +3,7 @@ import 'package:flutter_split_project/Controllers/trips_controller.dart';
 import 'package:flutter_split_project/Views/Details/TripDetailsView.dart';
 import 'package:flutter_split_project/Views/Login/LoginView.dart';
 import 'package:flutter_split_project/Views/MainTabbar/MainTabView.dart';
+import 'package:flutter_split_project/Views/Notifications/notification_view.dart';
 import 'package:get/get.dart';
 
 import '../Controllers/dashboard_controller.dart';
@@ -20,6 +21,11 @@ class GetPageList {
       name: TripDetailsView.routeName,
       page: () => TripDetailsView(),
       binding: BindingsBuilder(() => Get.lazyPut(() => LoginController())),
+    ),
+    GetPage(
+      name: NotificationView.routeName,
+      page: () => NotificationView(),
+      binding: BindingsBuilder(() => Get.lazyPut(() => DashboardController())),
     ),
     GetPage(
       name: MainTabView.routeName,

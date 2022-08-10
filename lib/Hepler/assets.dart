@@ -5,10 +5,11 @@ class Assets {
   static String tab_expense = 'assets/icons/tab_expense.svg';
   static String tab_overview = 'assets/icons/tab_overview.svg';
 
-  static String point_business = 'assets/icons/ic_private_point.svg';
-  static String point_private = 'assets/icons/ic_business_point.svg';
+  static String point_business = 'assets/icons/ic_business_point.svg';
+  static String point_private = 'assets/icons/ic_private_point.svg';
 
   static String ic_date = 'assets/icons/ic_date.svg';
+  static String ic_trip_status = 'assets/icons/ic_trip_status.svg';
 
   //pngs
   static String intro1 = 'assets/images/intro1.png';

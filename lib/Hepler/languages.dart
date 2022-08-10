@@ -22,6 +22,7 @@ class Languages extends Translations {
           'total': 'Total',
           'monthly_history': 'Monthly History',
           'trip_details': 'Trip Details',
+          'notifications': 'Notifications',
 
         },
 
@@ -42,6 +43,7 @@ class Languages extends Translations {
           'total': 'Total',
           'monthly_history': 'Monthly History',
           'trip_details': 'Trip Details',
+          'notifications': 'Notifications',
 
 
         },

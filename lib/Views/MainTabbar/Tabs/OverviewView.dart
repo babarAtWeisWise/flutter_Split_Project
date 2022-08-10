@@ -27,21 +27,17 @@ class _OverviewState extends State<OverviewView> {
       appBar: CustomAppBar(
           title: Text('overview'.tr,
               style:
-              Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
+                  Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
           centerTitle: true,
           leading: IconButton(
-              onPressed: () {
-
-              },
+              onPressed: () {},
               icon: Icon(
                 Icons.menu_outlined,
                 color: Colors.black,
               )),
           actions: [
             IconButton(
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 icon: Icon(
                   Icons.notification_important_rounded,
                   color: Colors.black,
@@ -54,13 +50,13 @@ class _OverviewState extends State<OverviewView> {
           child: Container(
             decoration: new BoxDecoration(
                 gradient: new LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    HexColor.fromHex('#FFFFFF'),
-                    HexColor.fromHex('#EFF1F5')
-                  ],
-                )),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                HexColor.fromHex('#FFFFFF'),
+                HexColor.fromHex('#EFF1F5')
+              ],
+            )),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -101,7 +97,7 @@ class _OverviewState extends State<OverviewView> {
                                       child: PieChart(
                                         dataMap: {"Private": 5, "Business": 3},
                                         animationDuration:
-                                        Duration(milliseconds: 800),
+                                            Duration(milliseconds: 800),
                                         chartLegendSpacing: 32,
                                         chartRadius: 500 / 3.2,
                                         colorList: [
@@ -138,99 +134,96 @@ class _OverviewState extends State<OverviewView> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                SizedBox(
-                                  width: 170,
+                                Expanded(
                                   child: Card(
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(15),
                                         side: BorderSide(
                                             color: Colors.black26, width: 0.8)),
                                     elevation: 1,
-                                    margin: const EdgeInsets.symmetric(
-                                        vertical: 10.0, horizontal: 10.0),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          8.0, 6.0, 8.0, 6.0),
                                       child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
                                           SvgPicture.asset(
                                             Assets.point_private,
-                                            width: 10.r,
-                                            height: 10.r,
+                                            width: 9.r,
+                                            height: 9.r,
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0, right: 8.0),
-                                            child: Text('private'.tr,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .regular
-                                                    .copyWith(fontSize: 14.sp)),
+                                          Text(
+                                            'private'.tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .regular
+                                                .copyWith(fontSize: 13.sp),
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 8.0),
-                                            child: SizedBox(
-                                              width: 5.0,
-                                              height: 20.0,
-                                              child: VerticalDivider(
-                                                color: Colors.black45,
-                                              ),
+                                          SizedBox(
+                                            height: 14.0,
+                                            child: Container(
+                                              width: 0.8,
+                                              color: Colors.black26,
                                             ),
                                           ),
-                                          Text('25',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .medium
-                                                  .copyWith(fontSize: 14.sp)),
+                                          Text(
+                                            '50km'.tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .medium
+                                                .copyWith(
+                                              fontSize: 13.sp,
+                                            ),
+                                          )
                                         ],
                                       ),
                                     ),
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 170,
+                                  width: 8.0,
+                                ),
+                                Expanded(
                                   child: Card(
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(15),
                                         side: BorderSide(
                                             color: Colors.black26, width: 0.8)),
                                     elevation: 1,
-                                    margin: const EdgeInsets.symmetric(
-                                        vertical: 10.0, horizontal: 10.0),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          8.0, 6.0, 8.0, 6.0),
                                       child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
                                           SvgPicture.asset(
                                             Assets.point_business,
-                                            width: 10.r,
-                                            height: 10.r,
+                                            width: 9.r,
+                                            height: 9.r,
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0, right: 8.0),
-                                            child: Text('business'.tr,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .regular
-                                                    .copyWith(fontSize: 14.sp)),
+                                          Text(
+                                            'business'.tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .regular
+                                                .copyWith(fontSize: 13.sp),
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 8.0),
-                                            child: SizedBox(
-                                              width: 5.0,
-                                              height: 20.0,
-                                              child: VerticalDivider(
-                                                color: Colors.black45,
-                                              ),
+                                          SizedBox(
+                                            height: 14.0,
+                                            child: Container(
+                                              width: 0.8,
+                                              color: Colors.black26,
                                             ),
                                           ),
-                                          Text('25',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .medium
-                                                  .copyWith(fontSize: 14.sp)),
+                                          Text(
+                                            '10km'.tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .medium
+                                                .copyWith(
+                                              fontSize: 13.sp,
+                                            ),
+                                          )
                                         ],
                                       ),
                                     ),
@@ -260,25 +253,27 @@ class _OverviewState extends State<OverviewView> {
                 Expanded(
                   child: Container(
                     child: ListView.separated(
-                        padding: EdgeInsets.all(15),
-                        itemCount: 10,
-                        itemBuilder: (context, index) {
-                          return Container(
-                              child: AnimationConfiguration.staggeredList(
-                                position: index,
-                                duration: const Duration(milliseconds: 500),
-                                child: SlideAnimation(
-                                  verticalOffset: 100.0,
-                                  duration: Duration(milliseconds: 500),
-                                  child: Container(
-                                    height: 110.h,
-                                    child: item_overview(),
-                                  ),
-                                ),
-                              ));
-                        }, separatorBuilder: (BuildContext context, int index) {
-                      return SizedBox(height: 5.h);
-                    },),
+                      padding: EdgeInsets.all(15),
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return Container(
+                            child: AnimationConfiguration.staggeredList(
+                          position: index,
+                          duration: const Duration(milliseconds: 500),
+                          child: SlideAnimation(
+                            verticalOffset: 100.0,
+                            duration: Duration(milliseconds: 500),
+                            child: Container(
+                              height: 110.h,
+                              child: item_overview(),
+                            ),
+                          ),
+                        ));
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return SizedBox(height: 5.h);
+                      },
+                    ),
                   ),
                 )
               ],
