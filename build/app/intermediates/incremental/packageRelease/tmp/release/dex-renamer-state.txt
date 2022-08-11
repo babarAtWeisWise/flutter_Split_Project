@@ -1,4 +1,0 @@
-#Thu Aug 11 14:37:14 PKT 2022
-base.0=/Users/weiswise/Documents/Flutter_Projects/SplitProject/flutter_Split_Project/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

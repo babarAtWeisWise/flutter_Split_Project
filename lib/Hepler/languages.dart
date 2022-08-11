@@ -24,6 +24,9 @@ class Languages extends Translations {
           'trip_details': 'Trip Details',
           'expense_details': 'Expense Details',
           'notifications': 'Notifications',
+          'settings': 'Settings',
+          'faq': 'FAQ',
+          'logout': 'Logout',
 
         },
 
@@ -46,6 +49,9 @@ class Languages extends Translations {
           'trip_details': 'Trip Details',
           'expense_details': 'Expense Details',
           'notifications': 'Notifications',
+          'settings': 'Settings',
+          'faq': 'FAQ',
+          'logout': 'Logout',
 
 
         },

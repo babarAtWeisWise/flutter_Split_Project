@@ -12,6 +12,10 @@ class Assets {
   static String ic_trip_status = 'assets/icons/ic_trip_status.svg';
 
   static String app_logo = 'assets/icons/app_logo.svg';
+  static String ic_settings = 'assets/icons/ic_setting.svg';
+  static String ic_faq = 'assets/icons/ic_faq.svg';
+  static String ic_logout = 'assets/icons/ic_logout.svg';
+  static String ic_forward_arrow = 'assets/icons/ic_forward_arrow.svg';
 
   //pngs
   static String small_logo = 'assets/small_logo.png';
