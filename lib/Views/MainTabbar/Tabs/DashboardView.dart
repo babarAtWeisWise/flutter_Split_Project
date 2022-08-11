@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_split_project/Extensions/CustomTextStyle.dart';
@@ -20,16 +19,21 @@ class DashboardView extends StatefulWidget {
 }
 
 class _DashboardState extends State<DashboardView> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: CustomAppBar(
           title: Text('License Plate #3432',
               style:
                   Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
           centerTitle: true,
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                _scaffoldKey.currentState?.openDrawer();
+              },
               icon: Icon(
                 Icons.menu_outlined,
                 color: Colors.black,
@@ -46,15 +50,12 @@ class _DashboardState extends State<DashboardView> {
             ),
           ]),
       drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            Container(
-              decoration: new BoxDecoration(
+            DrawerHeader(
+              decoration: BoxDecoration(
                   gradient: new LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
@@ -62,44 +63,74 @@ class _DashboardState extends State<DashboardView> {
                     HexColor.fromHex('#00B5EF'),
                     HexColor.fromHex('#01A2D4')
                   ])),
-              child: DrawerHeader(
-                child: Container(
-                    color: Colors.red,
-                    child: Column(
-                  children: [
-                    Text('Kasper Weis',
-                        style: Theme.of(context)
-                            .textTheme
-                            .medium
-                            .copyWith(fontSize: 18.sp, color: Colors.white)),
-                    TextButton(
-                      style: TextButton.styleFrom(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Kasper Weis',
+                      style: Theme.of(context)
+                          .textTheme
+                          .medium
+                          .copyWith(fontSize: 18.sp, color: Colors.white)),
+                  TextButton(
+                    style: TextButton.styleFrom(
                         primary: Colors.white,
                         textStyle: Theme.of(context)
                             .textTheme
                             .regular
                             .copyWith(fontSize: 13.sp),
-                      ),
-                      onPressed: () {},
-                      child: const Text('View Profile'),
-                    )
-                  ],
-                )),
+                        padding: EdgeInsets.all(2.0),
+                        alignment: Alignment.topLeft),
+                    onPressed: () {},
+                    child: const Text(
+                      'View Profile',
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                ],
               ),
             ),
             ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
+              leading: SvgPicture.asset(
+                Assets.ic_settings,
+              ),
+              title: Text(
+                'settings'.tr,
+                style: Theme.of(context)
+                    .textTheme
+                    .regular
+                    .copyWith(fontSize: 16.sp),
+              ),
+              trailing: SvgPicture.asset(Assets.ic_forward_arrow),
+              onTap: () {},
             ),
             ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
+              leading: SvgPicture.asset(
+                Assets.ic_faq,
+              ),
+              title: Text(
+                'faq'.tr,
+                style: Theme.of(context)
+                    .textTheme
+                    .regular
+                    .copyWith(fontSize: 16.sp),
+              ),
+              trailing: SvgPicture.asset(Assets.ic_forward_arrow),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: SvgPicture.asset(
+                Assets.ic_logout,
+              ),
+              title: Text(
+                'logout'.tr,
+                style: Theme.of(context)
+                    .textTheme
+                    .regular
+                    .copyWith(fontSize: 16.sp),
+              ),
+              trailing: SvgPicture.asset(Assets.ic_forward_arrow),
+              onTap: () {},
             ),
           ],
         ),
