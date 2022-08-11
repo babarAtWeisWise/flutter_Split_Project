@@ -8,6 +8,8 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import '../../../Hepler/colors.dart';
 import '../../../Listview_Items/item_expense.dart';
 import '../../../Widgets/custom_appbar.dart';
+import '../../../Widgets/custom_drawer.dart';
+import '../../Notifications/notification_view.dart';
 
 class ExpensesView extends StatefulWidget {
   static const String routeName = "/trips";
@@ -17,28 +19,35 @@ class ExpensesView extends StatefulWidget {
 }
 
 class _ExpensesState extends State<ExpensesView> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: CustomAppBar(
           title: Text('Expenses',
               style:
               Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
           centerTitle: true,
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                _scaffoldKey.currentState?.openDrawer();
+              },
               icon: Icon(
                 Icons.menu_outlined,
                 color: Colors.black,
               )),
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(NotificationView.routeName);
+                },
                 icon: Icon(
                   Icons.notification_important_rounded,
                   color: Colors.black,
                 )),
           ]),
+      drawer: CustomDrawer(),
       extendBodyBehindAppBar: true,
       body: Center(
         child: Padding(

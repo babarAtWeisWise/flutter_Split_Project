@@ -17,7 +17,7 @@ class PasswordField extends StatefulWidget {
 }
 
 class _PasswordFieldState extends State<PasswordField> {
-  bool _obscureText = true;
+  bool _obscureText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _PasswordFieldState extends State<PasswordField> {
                   fillColor: Colors.transparent,
                   border: InputBorder.none,
                   filled: true,
-                  contentPadding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                  contentPadding: EdgeInsets.all(10),
                   hintText: "Password",
                   suffixIcon: new GestureDetector(
                     onTap: () {
@@ -46,7 +46,7 @@ class _PasswordFieldState extends State<PasswordField> {
                       });
                     },
                     child:
-                    new Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+                    new Icon(_obscureText ? Icons.visibility_off : Icons.visibility),
                   ),
                 ),
               ),

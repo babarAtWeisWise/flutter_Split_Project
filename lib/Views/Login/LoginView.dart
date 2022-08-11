@@ -1,18 +1,15 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_split_project/Views/Forgot/ForgotPasswordView.dart';
 import 'package:flutter_split_project/Views/MainTabbar/MainTabView.dart';
-import 'package:get/get.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:get/get.dart';
 import '../../Extensions/Colors.dart';
 import '../../Widgets/ButtonWidget.dart';
 import '../../Widgets/PasswordTextFieldWidget.dart';
 import '../../Widgets/TextFieldWidget.dart';
 import '../../Widgets/TopHintTextfieldLabelWidget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_split_project/Extensions/CustomTextStyle.dart';
 
 class LoginView extends StatefulWidget {
   static const String routeName = "/login";
@@ -22,22 +19,24 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginState extends State<LoginView> {
-
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarDividerColor: Colors.transparent,
+    ));
     return Scaffold(
-      body:Padding(
-        padding: const EdgeInsets.only(top: 30),
-        child: Container(
-          decoration: new BoxDecoration(
-              gradient: new LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  HexColor.fromHex('#FFFFFF'),
-                  HexColor.fromHex('#EFF1F5')
-                ],
-              )),
+      body: Container(
+        decoration: new BoxDecoration(
+          gradient: new LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [HexColor.fromHex('#FFFFFF'), HexColor.fromHex('#EFF1F5')],
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(18, 26, 18, 3),
           child: ListView(
             children: [
               Image(
@@ -46,97 +45,64 @@ class _LoginState extends State<LoginView> {
                 image: AssetImage('assets/small_logo.png'),
               ),
               SizedBox(
-                height: 15,
+                height: 15.h,
               ),
-              Center(
-                child: Text(
-                  'Login to SATCAR',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black,
-                    fontSize:24.0,
+              Text(
+                'Login to SATCAR',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black,
+                  fontSize: 24.sp,
+                ),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              TopHintTextfieldLabelWidget(hint: 'Email'),
+              SizedBox(
+                height: 6.h,
+              ),
+              TextFieldWidget(hint: 'Enter Email'),
+              SizedBox(
+                height: 20.h,
+              ),
+              TopHintTextfieldLabelWidget(hint: 'Password'),
+              SizedBox(
+                height: 6.h,
+              ),
+              PasswordField(onFieldSubmitted: (String value) {
+                setState(() {});
+              }),
+              Align(
+                alignment: Alignment.topRight,
+                child: TextButton(
+                  onPressed: () {
+                    Get.toNamed(ForgotPasswordView.routeName);
+                  },
+                  child: Text(
+                    'Forgot Password?',
+                    style: Theme.of(context)
+                        .textTheme
+                        .regular
+                        .copyWith(fontSize: 12.sp),
+                    textAlign: TextAlign.end,
                   ),
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 6.h,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left:22.0,right: 20.0),
-                child: TopHintTextfieldLabelWidget(hint: 'Email'),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left:20.0,right: 20.0),
-                child: TextFieldWidget(hint: 'Enter Email'),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left:22.0,right: 20.0),
-                child: TopHintTextfieldLabelWidget(hint: 'Password'),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left:22.0,right: 20.0),
-                child: PasswordField(
-                    onFieldSubmitted: (String value) {
-                      setState(() {
-
-                      });
-                    }
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left:20.0,right: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    TextButton(
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-                      ),
-                      onPressed: () {
-
-                      },
-                      child: TopHintTextfieldLabelWidget(hint: 'Forgot Password?'),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left:20.0,right: 20.0),
-                child: ButtonWidget(
-                    title: "login",
-                    onPressed: () {
-                      // showTopSnackBar(
-                      //   context,
-                      //   CustomSnackBar.error(
-                      //     message:
-                      //     "Something went wrong. Please check your credentials and try again",
-                      //   ),
-                      // );
-                      Get.offNamed(MainTabView.routeName);
-                    }
-                ),
-              )
+              ButtonWidget(
+                  title: "login",
+                  onPressed: () {
+                    Get.offNamed(MainTabView.routeName);
+                  })
             ],
           ),
         ),
-      ) ,
+      ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

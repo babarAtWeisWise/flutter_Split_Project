@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 import '../Controllers/dashboard_controller.dart';
 import '../Views/Details/ExpenseDetailsView.dart';
+import '../Views/Forgot/ForgotPasswordView.dart';
 
 
 class GetPageList {
@@ -31,6 +32,11 @@ class GetPageList {
     GetPage(
       name: NotificationView.routeName,
       page: () => NotificationView(),
+      binding: BindingsBuilder(() => Get.lazyPut(() => DashboardController())),
+
+    ),GetPage(
+      name: ForgotPasswordView.routeName,
+      page: () => ForgotPasswordView(),
       binding: BindingsBuilder(() => Get.lazyPut(() => DashboardController())),
 
     ),
