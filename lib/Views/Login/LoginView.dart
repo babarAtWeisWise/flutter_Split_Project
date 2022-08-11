@@ -1,5 +1,5 @@
-
-
+import 'package:flutter_split_project/Extensions/CustomTextStyle.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +9,7 @@ import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:get/get.dart';
 import '../../Extensions/Colors.dart';
+import '../../Hepler/assets.dart';
 import '../../Widgets/ButtonWidget.dart';
 import '../../Widgets/PasswordTextFieldWidget.dart';
 import '../../Widgets/TextFieldWidget.dart';
@@ -40,27 +41,22 @@ class _LoginState extends State<LoginView> {
               )),
           child: ListView(
             children: [
-              Image(
-                height: 100,
-                width: 100,
-                image: AssetImage('assets/small_logo.png'),
+              SvgPicture.asset(
+                Assets.app_logo
               ),
               SizedBox(
-                height: 15,
+                height: 40.h,
               ),
-              Center(
-                child: Text(
-                  'Login to SATCAR',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black,
-                    fontSize:24.0,
-                  ),
-                ),
+              Padding(
+                padding: const EdgeInsets.only(left:22.0,right: 20.0),
+                child: Text('Login to your account',
+                    style: Theme.of(context)
+                        .textTheme
+                        .medium
+                        .copyWith(fontSize: 20.sp)),
               ),
               SizedBox(
-                height: 40,
+                height: 20.h,
               ),
               Padding(
                 padding: const EdgeInsets.only(left:22.0,right: 20.0),

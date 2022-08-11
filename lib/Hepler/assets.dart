@@ -11,6 +11,8 @@ class Assets {
   static String ic_date = 'assets/icons/ic_date.svg';
   static String ic_trip_status = 'assets/icons/ic_trip_status.svg';
 
+  static String app_logo = 'assets/icons/app_logo.svg';
+
   //pngs
   static String small_logo = 'assets/small_logo.png';
 
