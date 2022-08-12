@@ -1,7 +1,4 @@
-import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class Languages extends Translations {
@@ -27,6 +24,9 @@ class Languages extends Translations {
           'settings': 'Settings',
           'faq': 'FAQ',
           'logout': 'Logout',
+          'forgot_password': 'Forgot Password',
+          'send': 'Send',
+          'please_enter_email': 'Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to choose a new password for your account',
 
         },
 
@@ -52,7 +52,9 @@ class Languages extends Translations {
           'settings': 'Settings',
           'faq': 'FAQ',
           'logout': 'Logout',
-
+          'forgot_password': 'Forgot Password',
+          'send': 'Send',
+          'please_enter_email': 'Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to choose a new password for your account',
 
         },
       };

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_split_project/Extensions/CustomTextStyle.dart';
 import 'package:flutter_split_project/Listview_Items/item_trip.dart';
 import 'package:flutter_split_project/Views/Notifications/notification_view.dart';
+import 'package:flutter_split_project/Widgets/custom_drawer.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,115 +27,31 @@ class _DashboardState extends State<DashboardView> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: CustomAppBar(
-          title: Text('License Plate #3432',
-              style:
-                  Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
-          centerTitle: true,
-          leading: IconButton(
-              onPressed: () {
-                _scaffoldKey.currentState?.openDrawer();
-              },
-              icon: Icon(
-                Icons.menu_outlined,
-                color: Colors.black,
-              )),
-          actions: [
-            IconButton(
-              onPressed: () {
-                Get.toNamed(NotificationView.routeName);
-              },
-              icon: Icon(
-                Icons.notification_important_rounded,
-                color: Colors.black,
-              ),
+        title: Text('License Plate #3432',
+            style:
+                Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
+        centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              _scaffoldKey.currentState?.openDrawer();
+            },
+            icon: Icon(
+              Icons.menu_outlined,
+              color: Colors.black,
+            )),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.toNamed(NotificationView.routeName);
+            },
+            icon: Icon(
+              Icons.notification_important_rounded,
+              color: Colors.black,
             ),
-          ]),
-      drawer: Drawer(
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                  gradient: new LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                    HexColor.fromHex('#00B5EF'),
-                    HexColor.fromHex('#01A2D4')
-                  ])),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Kasper Weis',
-                      style: Theme.of(context)
-                          .textTheme
-                          .medium
-                          .copyWith(fontSize: 18.sp, color: Colors.white)),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        primary: Colors.white,
-                        textStyle: Theme.of(context)
-                            .textTheme
-                            .regular
-                            .copyWith(fontSize: 13.sp),
-                        padding: EdgeInsets.all(2.0),
-                        alignment: Alignment.topLeft),
-                    onPressed: () {},
-                    child: const Text(
-                      'View Profile',
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                Assets.ic_settings,
-              ),
-              title: Text(
-                'settings'.tr,
-                style: Theme.of(context)
-                    .textTheme
-                    .regular
-                    .copyWith(fontSize: 16.sp),
-              ),
-              trailing: SvgPicture.asset(Assets.ic_forward_arrow),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                Assets.ic_faq,
-              ),
-              title: Text(
-                'faq'.tr,
-                style: Theme.of(context)
-                    .textTheme
-                    .regular
-                    .copyWith(fontSize: 16.sp),
-              ),
-              trailing: SvgPicture.asset(Assets.ic_forward_arrow),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                Assets.ic_logout,
-              ),
-              title: Text(
-                'logout'.tr,
-                style: Theme.of(context)
-                    .textTheme
-                    .regular
-                    .copyWith(fontSize: 16.sp),
-              ),
-              trailing: SvgPicture.asset(Assets.ic_forward_arrow),
-              onTap: () {},
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
+      drawer: CustomDrawer(),
       extendBodyBehindAppBar: true,
       body: Center(
         child: Padding(

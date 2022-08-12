@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_split_project/Extensions/CustomTextStyle.dart';
-import 'package:flutter_split_project/Listview_Items/item_trip.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,8 +9,9 @@ import '../../../Hepler/assets.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../../../Listview_Items/item_overview.dart';
-import '../../../Widgets/TopHintTextfieldLabelWidget.dart';
 import '../../../Widgets/custom_appbar.dart';
+import '../../../Widgets/custom_drawer.dart';
+import '../../Notifications/notification_view.dart';
 
 class OverviewView extends StatefulWidget {
   static const String routeName = "/dashboard";
@@ -21,28 +21,35 @@ class OverviewView extends StatefulWidget {
 }
 
 class _OverviewState extends State<OverviewView> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: CustomAppBar(
           title: Text('overview'.tr,
               style:
                   Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
           centerTitle: true,
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                _scaffoldKey.currentState?.openDrawer();
+              },
               icon: Icon(
                 Icons.menu_outlined,
                 color: Colors.black,
               )),
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(NotificationView.routeName);
+                },
                 icon: Icon(
                   Icons.notification_important_rounded,
                   color: Colors.black,
                 )),
           ]),
+      drawer: CustomDrawer(),
       extendBodyBehindAppBar: true,
       body: Center(
         child: Padding(

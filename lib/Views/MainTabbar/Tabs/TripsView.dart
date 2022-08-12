@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_split_project/Extensions/CustomTextStyle.dart';
 import 'package:flutter_split_project/Listview_Items/item_trip.dart';
+import 'package:flutter_split_project/Widgets/custom_drawer.dart';
 import 'package:get/get.dart';
 import '../../../Extensions/Colors.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import '../../../Hepler/colors.dart';
 import '../../../Widgets/custom_appbar.dart';
+import '../../Notifications/notification_view.dart';
 
 class TripsView extends StatefulWidget {
   static const String routeName = "/trips";
@@ -16,28 +18,35 @@ class TripsView extends StatefulWidget {
 }
 
 class _TripsState extends State<TripsView> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: CustomAppBar(
           title: Text('Trips',
               style:
                   Theme.of(context).textTheme.medium.copyWith(fontSize: 18.sp)),
           centerTitle: true,
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                _scaffoldKey.currentState?.openDrawer();
+              },
               icon: Icon(
                 Icons.menu_outlined,
                 color: Colors.black,
               )),
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(NotificationView.routeName);
+                },
                 icon: Icon(
                   Icons.notification_important_rounded,
                   color: Colors.black,
                 )),
           ]),
+      drawer: CustomDrawer(),
       extendBodyBehindAppBar: true,
       body: Center(
         child: Padding(
